@@ -18,6 +18,7 @@
     .row,
     .box {
         height: 100%;
+        overflow: hidden;
     }
 
     .row {
@@ -28,18 +29,36 @@
     #score-blue {
         font-size: 30vw;
     }
+
+    .btn-minus {
+        margin: 20px 0px 0px 20px;
+    }
+
+    .disable-select {
+        user-select: none;
+        /* supported by Chrome and Opera */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+    }
 </style>
 
 <body>
-    <h1 id="demo">Tes Score</h1>
     <div class="row">
         <div style="background-color:red;" class="col-6 col-xs-12">
-            <div class="btn-navi-red btn btn-sm btn-outline-light" onclick="minred()" title="Kurangi">-</div>
-            <div id="score-red" class="box d-flex align-items-center justify-content-center" onclick='addred()'>0</div>
+            <div class="btn-minus btn btn-xs btn-outline-light" onclick="minred()" title="Kurangi">-</div>
+            <div id="score-red" class="box d-flex align-items-center justify-content-center disable-select"
+                onclick='addred()'>0</div>
         </div>
         <div style="background-color:blue;" class="col-6 col-xs-12">
-            <div class="btn-navi-blue btn btn-xs btn-outline-light" onclick="minblue()" title="Kurangi">-</div>
-            <div id="score-blue" class="box d-flex align-items-center justify-content-center" onclick="addblue()">0
+            <div class="btn-minus btn btn-xs btn-outline-light" onclick="minblue()" title="Kurangi">-</div>
+            <div id="score-blue" class="box d-flex align-items-center justify-content-center disable-select"
+                onclick="addblue()">0
             </div>
         </div>
     </div>
